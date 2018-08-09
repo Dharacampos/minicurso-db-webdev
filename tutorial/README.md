@@ -59,4 +59,5 @@ está correto**, caso contrário, especifique-o. Clique em __Próximo (next)__ a
 na imagem abaixo:
     ![PostgreSQL](img/pgservercreated.png)
 
+
 # Iniciando o primeiro projeto
