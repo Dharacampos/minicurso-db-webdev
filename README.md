@@ -8,9 +8,9 @@ A pasta `projeto` contém os arquivos do projeto desenvolvido durante o minicurs
 
 ## Sobre o projeto
 
-#### ?? Tema ??
+#### Tema
 
-O tema do minicurso é uma __web application__ envolvendo a criação de um sistema de **??teleconsulta??** entre o Hospital de Clínicas de Uberlândia e uma clínica pequena de consultas gerais, em um cidade remota.
+O tema do minicurso é uma __web application__ envolvendo a criação de um sistema de **Prontuário eletrônico**.
 
 #### Requisitos
 
@@ -20,6 +20,6 @@ O tema do minicurso é uma __web application__ envolvendo a criação de um sist
 
 Durante o projeto, serão utilizadas diversas ferramentas para construção do banco de dados e sistema.
 
-###### Linguagem de programação e ferramentas
+##### Linguagem de programação e ferramentas
 
 O projeto utiliza a linguagem de programação **Java** para construção do `backend` em conjunto com as ferramentas **Servlets** e **JSP**. No `frontend`, projeto utiliza as ferramentas **HTML**, **CSS** (com framework **Bootstrap 3.7**), e a linguagem **JavaScript**. O banco de dados utilizado é o **PostgreSQL**. O passo a passo de instalação do destas ferramentas se encontra no arquivo `projeto/README.md`
