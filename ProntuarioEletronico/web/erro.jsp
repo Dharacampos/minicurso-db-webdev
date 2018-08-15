@@ -9,28 +9,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!--CRIANDO A VARIAVEL TITULO E ATRIBUINDO UM VALOR A ELA-->
-<c:set var="titulo" value="ProEle UFU" />
+<c:set var="titulo" value="Erro | ProEle UFU" />
 
 <!--INCLUINDO O CODIGO DO ARQUIVO inc_header_inicio.jsp-->
 <%@include file="inc/inc_header_inicio.jsp" %>
 
 <!--------------- INICIO DO CONTEUDO DA PAGINA-->
 
+<h1>ERRO! </h1>
 
-<form action="Login" method="post"><!--INICIO DO FORMULARIO DE LOGIN--> 
-
-    <!--CAMPO DO USUARIO-->
-    <label for="nome">Entre com o seu usuário: </label>
-    <input type="text" name="usuario" id="usuario" placeholder="joao@ufu.br">
-
-    <!--CAMPO DA SENHA-->
-    <label for="senha">Entre com a senha: </label>
-    <input type="password" name="senha" id="senha">
-
-    <!--BOTAO DE ENVIAR-->
-    <input type="submit" name="entrar" id="entrar" value="Entrar"> 
-
-</form><!--FIM DO FORMULARIO DE LOGIN--> 
+<h1>USUÁRIO E/OU SENHA INCORRETOS. TENTE NOVAMENTE!</h1>
 
 <!--------------- FIM DO CONTEUDO DA PAGINA-->
 
