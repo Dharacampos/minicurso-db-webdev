@@ -59,18 +59,20 @@ public class Login extends HttpServlet {
         senha_form = request.getParameter("senha");
 
 //        QUERY QUE SERA EXECUTADA NO BANCO DE DADOS
-        query = "SELECT senha FROM users WHERE usuario='"
+        query = "SELECT usuario, senha FROM users WHERE usuario='"
                 + usuario_form + "'";
 
 //        CONSULTANDO O BANCO DE DADOS
         try {
 //        CRIANDO UM STATEMENT (st) E UMA CONJUNTO DE RESULTADOS 
 //          (rs) PARA A CONEXAO
+            if(conexao.isClosed()) System.out.println("FECHADA ------------------WA");
+            else System.out.println("ABERTA ------------------------");
             st = conexao.createStatement();
             rs = st.executeQuery(query);
 
 //            PERCORRENDO O rs
-            while (rs != null && !rs.next()) { //        VERIFICANDO SE O VALOR DE USUARIO NAO ESTA VAZIO
+            while (rs.next()) { //        VERIFICANDO SE O VALOR DE USUARIO NAO ESTA VAZIO
                 //SENHA E USUARIO CADASTRADO NO BANCO
                 String senha_banco = rs.getString("senha");
                 String usuario_banco = rs.getString("usuario");
