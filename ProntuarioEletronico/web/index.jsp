@@ -16,21 +16,18 @@
 
 <!--------------- INICIO DO CONTEUDO DA PAGINA-->
 
-
-<form action="Login" method="post"><!--INICIO DO FORMULARIO DE LOGIN--> 
-
-    <!--CAMPO DO USUARIO-->
-    <label for="nome">Entre com o seu usuário: </label>
-    <input type="text" name="usuario" id="usuario" placeholder="joao@ufu.br">
-
-    <!--CAMPO DA SENHA-->
-    <label for="senha">Entre com a senha: </label>
-    <input type="password" name="senha" id="senha">
-
-    <!--BOTAO DE ENVIAR-->
-    <input type="submit" name="entrar" id="entrar" value="Entrar"> 
-
-</form><!--FIM DO FORMULARIO DE LOGIN--> 
+<div class="container">
+    <form class="form-signin" action="Login" method="post">
+        <h2 class="form-signin-heading">Login</h2>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="usuario" name="usuario" class="form-control" placeholder="Usuário" required autofocus>
+        <label for="password" class="sr-only">Senha</label>
+        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
+        <div class="checkbox">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="entrar" id="entrar">Sign in</button>
+    </form>
+</div> <!-- /container -->
 
 <!--------------- FIM DO CONTEUDO DA PAGINA-->
 

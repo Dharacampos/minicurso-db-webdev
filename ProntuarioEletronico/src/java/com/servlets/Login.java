@@ -48,6 +48,8 @@ public class Login extends HttpServlet {
         Statement st;
         ResultSet rs = null;
 
+        
+        
 //        VARIAVEL CONTENDO A CONEXAO COM O BD
         conexao = ConexaoDatabase.getConnection();
 
@@ -56,7 +58,7 @@ public class Login extends HttpServlet {
 
 //        COLHENDO VALORES DO FORMULARIO
         usuario_form = request.getParameter("usuario"); //USUARIO
-        senha_form = request.getParameter("senha");
+        senha_form = request.getParameter("senha"); //SENHA
 
 //        QUERY QUE SERA EXECUTADA NO BANCO DE DADOS
         query = "SELECT usuario, senha FROM users WHERE usuario='"
@@ -66,33 +68,32 @@ public class Login extends HttpServlet {
         try {
 //        CRIANDO UM STATEMENT (st) E UMA CONJUNTO DE RESULTADOS 
 //          (rs) PARA A CONEXAO
-            if(conexao.isClosed()) System.out.println("FECHADA ------------------WA");
-            else System.out.println("ABERTA ------------------------");
+
             st = conexao.createStatement();
             rs = st.executeQuery(query);
 
 //            PERCORRENDO O rs
-            while (rs.next()) { //        VERIFICANDO SE O VALOR DE USUARIO NAO ESTA VAZIO
+            if (rs.next()) { //        VERIFICANDO SE O VALOR DE USUARIO NAO ESTA VAZIO
                 //SENHA E USUARIO CADASTRADO NO BANCO
                 String senha_banco = rs.getString("senha");
-                String usuario_banco = rs.getString("usuario");
-                
-                if (usuario_banco != null // CHECANDO SE OS VALORES BATEM COM DB
-                        && usuario_banco.equals(usuario_form)
-                        && senha_banco.equals(senha_form)) {
+//                String usuario_banco = rs.getString("usuario");
+
+                if (senha_banco.equals(senha_form)) {
 //            ATRIBUINDO A VARIAVEL 'usuario' A SESSAO
                     session.setAttribute("usuario", usuario_form);
 //            REDIRECIONANDO PARA A PAGINA home.jsp
                     response.sendRedirect("home.jsp");
                 } else {
 //            REDIRECIONANDO PARA A PAGINA erro.jsp
-                    response.sendRedirect("erro.jsp");
+                    response.sendRedirect("erro.jsp=0");
                 }
+            } else {
+                response.sendRedirect("erro.jsp?status=-1");
             }
         } catch (SQLException ex) {
             System.out.println("[ERRO] Erro ao criar Statement ou ResultSet");
             System.out.println(ex);
-        }
+        } // FIM catch
 
-    }
-}
+    } //FIM doPost
+} //FIM servlet
