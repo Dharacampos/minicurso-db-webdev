@@ -36,3 +36,15 @@
 
 <!--INCLUINDO O CODIGO DO ARQUIVO inc_footer_inicio.jsp-->
 <%@include file="inc/inc_footer_inicio.jsp" %>
+                          <!--Estruturação do site-->
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css" >
+        
+    </head>
+    <body>
+        <div>
+            
+        </div>
+    </body>
+</html>
