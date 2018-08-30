@@ -32,3 +32,8 @@ está correto**, caso contrário, especifique-o. Clique em __Próximo (next)__ a
 
 
 # Iniciando o primeiro projeto
+
+## Download JSTL .jar
+
+1. https://mvnrepository.com/artifact/org.glassfish.web/javax.servlet.jsp.jstl/1.2.1
+1. https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api/1.2.1
