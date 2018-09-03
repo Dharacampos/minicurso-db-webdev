@@ -4,15 +4,7 @@
 <%@include file="inc/inc_header.jsp"%>
 <!--INICIO EDICAO PAGINA-->
 
-<h1>Estudates no PET</h1>
 
-<ol>
-    <!--laço subst i++, ja entende o tamanho da lista-->
-    <c:forEach items="${ESTUDANTES}" var="estudante" >
-        <li>${estudante}</li>
-        </c:forEach>
-
-</ol>
 
 <head>
     <meta charset="utf-8">
@@ -32,7 +24,8 @@
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+<!--    Copiar caminho para o estilo da pagina!-->
+    <link href="css/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -50,21 +43,21 @@
     <div class="container">
         <div class="row">
             
-        <div class="col-md-6">
+        
       <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
+        <h2 class="form-signin-heading">Entre com seu usuário e senha</h2>
+        <label for="inputEmail" class="sr-only">Usuário</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
+        <label for="inputPassword" class="sr-only">Senha</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me"> Lembre-me
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
-     </div>
+   
         </div>
     </div> <!-- /container -->
 
