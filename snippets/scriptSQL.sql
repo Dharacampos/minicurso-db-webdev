@@ -8,8 +8,8 @@ CREATE TABLE estudantes(
   id    SERIAL PRIMARY KEY,
   nome  VARCHAR(64) NOT NULL,
   cpf		VARCHAR(12) UNIQUE,
-  id_curso INT,
 	endereco VARCHAR(128),
+  id_curso INT,
 
   FOREIGN KEY (id_curso) REFERENCES cursos(id)
 );
@@ -37,7 +37,7 @@ CREATE TABLE disciplinas(
 );
 
 -- RELAÇÃO MUITOS PARA MUITOS
-CREATE TABLE discplinas_estudantes(
+CREATE TABLE disciplinas_estudantes(
   id SERIAL PRIMARY KEY,
   id_estudante INT,
   id_disciplina INT,
@@ -72,4 +72,4 @@ INSERT INTO disciplinas(descricao, sigla, ch, periodo, id_curso) VALUES
 ("Redes de Computadores", "RC", 60, 7, 5),
 ("Comunicação via Satélite", "CVS", 60, 8, 5);
 
-INSERT INTO discplinas_estudantes(id_estudante, id_disciplina) VALUES(1,1), (1,2), (1,3);
+INSERT INTO disciplinas_estudantes(id_estudante, id_disciplina) VALUES(1,1), (1,2), (1,3), (2, 9), (2, 7);

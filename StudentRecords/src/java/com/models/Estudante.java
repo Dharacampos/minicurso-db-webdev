@@ -5,27 +5,34 @@
  */
 package com.models;
 
+import java.util.List;
+
 /**
  *
  * @author paulo
  */
 public class Estudante {
+    
     private int id;
     private String nome;
     private String cpf;
     private String endereco;
     private String curso;
+    private List<String> disciplinas_mat;
 
     public Estudante() {
     }
 
-    public Estudante(int id, String nome, String cpf, String endereco, String curso) {
+    public Estudante(int id, String nome, String cpf, String endereco, String curso, List<String> disciplinas_mat) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
         this.curso = curso;
+        this.disciplinas_mat = disciplinas_mat;
     }
+    
+    
 
     public int getId() {
         return id;
@@ -66,4 +73,14 @@ public class Estudante {
     public void setCurso(String curso) {
         this.curso = curso;
     }    
+
+    public List<String> getDisciplinas_mat() {
+        return disciplinas_mat;
+    }
+
+    public void setDisciplinas_mat(List<String> disciplinas_mat) {
+        this.disciplinas_mat = disciplinas_mat;
+    }
+    
+    
 }

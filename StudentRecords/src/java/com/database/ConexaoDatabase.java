@@ -52,6 +52,8 @@ public class ConexaoDatabase {
         if (connection != null) {
             try {
                 connection.close();
+                connection = null;
+                System.out.println("[OK] Conexão destruída");
             } catch (SQLException ex) {
                 System.out.println("[ERRO] Erro na destruição da conexão");
                 System.out.println(ex);
