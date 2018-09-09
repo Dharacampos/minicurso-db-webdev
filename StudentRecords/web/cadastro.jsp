@@ -13,7 +13,6 @@
 <h2>Cadastrar estudante</h2>
 
 <c:if test="${param.success=='true'}" >
-  
     <div class="alert alert-success text-center" role="alert">Cadastro realizado com sucesso!</div>
 </c:if>
    

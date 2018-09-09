@@ -11,7 +11,9 @@
 <!--INICIO EDICAO PAGINA-->
 
 <h2>Estudantes cadastrados</h2>
-
+<c:if test="${param.success=='true'}" >
+    <div class="alert alert-success text-center" role="alert">Remoção realizada com sucesso!</div>
+</c:if>
 <br><br>
 <table class="table table-hover">
     <tr>
@@ -117,10 +119,13 @@
                 </div>
                 <div class="modal-body">
                     Apagar os dados de <strong>${estudante.nome}</strong> permanentemente?
+                    <form action="Remover" method="post" id="form_remover${estudante.id}" name="form_remover" >
+                        <input type="text"  hidden="" id="id_estudante" name="id_estudante" value="${estudante.id}">
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                    <button type="button" class="btn btn-primary">Sim, deletar</button>
+                    <button type="submit" class="btn btn-primary" form="form_remover${estudante.id}">Sim, deletar</button>
                 </div>
             </div>
         </div>
