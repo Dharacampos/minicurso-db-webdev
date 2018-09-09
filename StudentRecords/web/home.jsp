@@ -6,7 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<c:set var="pagina_atual" value="estudantes"></c:set>
+<c:set var="titulo" value="Home"></c:set>
 <%@include file="inc/inc_logged_header.jsp"%>
 <!--INICIO EDICAO PAGINA-->
 
@@ -86,11 +86,11 @@
                                 <div class="checkbox">
                                     <c:forEach items="${CATALOGO_DISCIPLINAS}" var="disc">
                                         <label>
-                                            <input type="checkbox" value="${disc}"
+                                            <input type="checkbox" value="${disc.key}"
                                                    <c:forEach items="${estudante.disciplinas_mat}" var="disc_matriculada">
-                                                       ${disc==disc_matriculada ? "checked" : ""}
+                                                       ${disc.value==disc_matriculada ? "checked" : ""}
                                                    </c:forEach>>
-                                            ${disc}
+                                            ${disc.value}
                                         </label>
                                         <br>
                                     </c:forEach>

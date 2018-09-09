@@ -23,6 +23,16 @@ public class Estudante {
     public Estudante() {
     }
 
+    public Estudante(String nome, String cpf, String endereco, String curso, List<String> disciplinas_mat) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.curso = curso;
+        this.disciplinas_mat = disciplinas_mat;
+    }
+
+    
+    
     public Estudante(int id, String nome, String cpf, String endereco, String curso, List<String> disciplinas_mat) {
         this.id = id;
         this.nome = nome;

@@ -82,6 +82,7 @@ public class Entrar extends HttpServlet {
                 if (senha_banco.equals(senha_form)) {
                     carregarEstudantes(session);
                     carregarCatalogoDisciplinas(session);
+                    carregarCursos(session);
 //                    rd.forward(request, response);
                     ConexaoDatabase.destroy();
                     response.sendRedirect("home.jsp");
@@ -205,7 +206,7 @@ public class Entrar extends HttpServlet {
         conexao = ConexaoDatabase.getConnection();
 
         //Criar query
-        query = "SELECT descricao FROM disciplinas";
+        query = "SELECT id, descricao FROM disciplinas";
 
         //Criar o statement        List<String> disciplinas = new ArrayList<>();
         st = conexao.prepareStatement(query);
@@ -214,15 +215,37 @@ public class Entrar extends HttpServlet {
         ResultSet rs = st.executeQuery();
 
         //Recuperar os resultados
-        List<String> catalogo_disciplinas = new ArrayList<>();
-
+        Map<Integer, String> catalogo_disciplinas = new HashMap<>();
         while (rs.next()) {
-            catalogo_disciplinas.add(rs.getString("descricao"));
-            System.out.println(rs.getString("descricao"));
+            catalogo_disciplinas.put(rs.getInt("id"),rs.getString("descricao"));
+//            System.out.println(rs.getString("descricao"));
         }
-        
+
         // Adicionar a session
         session.setAttribute("CATALOGO_DISCIPLINAS", catalogo_disciplinas);
+    }
+
+    private void carregarCursos(HttpSession session) throws SQLException {
+        conexao = ConexaoDatabase.getConnection();
+
+        //Criar query
+        query = "SELECT id, descricao FROM cursos";
+
+        //Criar o statement        List<String> disciplinas = new ArrayList<>();
+        st = conexao.prepareStatement(query);
+
+        //Executar o statement
+        ResultSet rs = st.executeQuery();
+
+        //Recuperar os resultados
+        Map<Integer, String> catalogo_cursos = new HashMap<>();
+        while (rs.next()) {
+            catalogo_cursos.put(rs.getInt("id"), rs.getString("descricao"));
+//            System.out.println(rs.getString("descricao"));
+        }
+
+        // Adicionar a session
+        session.setAttribute("CATALOGO_CURSOS", catalogo_cursos);
     }
 
 }
