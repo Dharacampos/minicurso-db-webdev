@@ -9,14 +9,36 @@
 <%@include file="inc/inc_header.jsp"%>
 <!--INICIO EDICAO PAGINA-->
 
-<h1>Estudantes no PET</h1>
+<h1>Estudantes cadastrados</h1>
 
-<ol>
-    <!--laço subst i++, ja entende o tamanho da lista-->
-    <c:forEach items="${ESTUDANTES}" var="estudante" >
-        <li>${estudante}</li>
-        </c:forEach>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th> 
+                    <th>CPF</th>
+                    <th>Endereço</th>
+                    <th>Curso</th>
+                </tr>
+                <c:forEach items="${sessionScope.ESTUDANTES}" var="estudante" >
+                    <tr>
+                        <td>${estudante.id}</td>
+                        <td>${estudante.nome}</td>
+                        <td>${estudante.cpf}</td> 
+                        <td>${estudante.endereco}</td>
+                        <td>${estudante.curso}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+        <col-md-4>
+            <button class="btn btn-primary">Atualizar</button>
+        </col-md-4>
+    </div>    
+</div>
 
-</ol>
+
 <!--FIM EDICAO PAGINA-->
 <%@include file="inc/inc_footer.jsp"%>

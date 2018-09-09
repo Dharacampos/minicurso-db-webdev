@@ -1,9 +1,10 @@
+package com.servlets;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,14 +13,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.PageContext;
 
 /**
  *
  * @author paulo
  */
-public class Index extends HttpServlet {
+public class Contato extends HttpServlet {
 
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -31,14 +33,9 @@ public class Index extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-
-        String[] estudantes = {"Paulo", "Dhara", "Arthur", "Mariana"};
-
-        request.setAttribute("ESTUDANTES", estudantes);
-
-        rd.forward(request, response);
+           RequestDispatcher rd = request.getRequestDispatcher("contato.jsp");
+           
+           rd.forward(request, response);
     }
 
     /**

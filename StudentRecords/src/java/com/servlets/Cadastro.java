@@ -18,8 +18,12 @@ import javax.servlet.http.HttpSession;
  *
  * @author paulo
  */
-public class Index extends HttpServlet {
+public class Cadastro extends HttpServlet {
 
+
+
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -32,12 +36,8 @@ public class Index extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-
-        String[] estudantes = {"Paulo", "Dhara", "Arthur", "Mariana"};
-
-        request.setAttribute("ESTUDANTES", estudantes);
-
+        RequestDispatcher rd = request.getRequestDispatcher("cadastro.jsp");
+        
         rd.forward(request, response);
     }
 
