@@ -12,7 +12,7 @@
 
 <h2>Estudantes cadastrados</h2>
 
-<br></br>
+<br><br>
 <table class="table table-hover">
     <tr>
         <th>Id</th>
@@ -40,8 +40,6 @@
     </c:forEach>
 </table>
 </div>
-</div
-</div>
 
 <c:forEach items="${ESTUDANTES}" var="estudante" >
     <!-- Modal EDITAR -->
@@ -53,12 +51,57 @@
                     <h4 class="modal-title" id="modal_editarLabel">Editar estudante</h4>
                 </div>
                 <div class="modal-body">
-                    <!--CAMPOS DE EDICAO DO ESTUDANTE-->
+                    <form action="Atualizar" method="post" class="form-group" id="dados_estudantes">
+                        <!--CAMPOS DE EDICAO DO ESTUDANTE-->
+                        <div class="row">
+                            <div class="col-md-1 form-group">
+                                <label for="id">Id</label>
+                                <p id="id" name="id">${estudante.id}</p>
 
+                            </div>
+                            <div class="col-md-5 form-group">
+                                <label for="nome">Nome</label>
+                                <p id="nome" name="nome">${estudante.nome}</p>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="curso">Curso</label>
+                                <input class="form-control" type="text" id="curso" nome="curso" value="${estudante.curso}">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 form-group">
+                                <label for="cpf">CPF</label>
+                                <p id="cpf" name="cpf">${estudante.cpf}</p>
+                            </div>
+                            <div class="col-md-9 form-group">
+                                <label for="endereco">Endereço</label>
+                                <input class="form-control" type="text" id="endereco" nome="endereco" value="${estudante.endereco}">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="disciplinas">Disciplinas</label>
+                                <div class="checkbox">
+                                    <c:forEach items="${CATALOGO_DISCIPLINAS}" var="disc">
+                                        <label>
+                                            <input type="checkbox" value="${disc}"
+                                                   <c:forEach items="${estudante.disciplinas_mat}" var="disc_matriculada">
+                                                       ${disc==disc_matriculada ? "checked" : ""}
+                                                   </c:forEach>>
+                                            ${disc}
+                                        </label>
+                                        <br>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Salvar alterações</button>
+                    <button type="submit" form="dados_estudantes" class="btn btn-primary">Salvar alterações</button>
                 </div>
             </div>
         </div>
@@ -73,11 +116,11 @@
                     <h4 class="modal-title" id="modal_deletarLabel">Modal title</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    Apagar os dados de <strong>${estudante.nome}</strong> permanentemente?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-primary">Sim, deletar</button>
                 </div>
             </div>
         </div>

@@ -14,7 +14,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -78,7 +81,7 @@ public class Entrar extends HttpServlet {
 
                 if (senha_banco.equals(senha_form)) {
                     carregarEstudantes(session);
-
+                    carregarCatalogoDisciplinas(session);
 //                    rd.forward(request, response);
                     ConexaoDatabase.destroy();
                     response.sendRedirect("home.jsp");
@@ -102,7 +105,7 @@ public class Entrar extends HttpServlet {
         // CRIANDO LISTA DE ESTUDANTES 
         List<Estudante> estudantes = new ArrayList<>();
         // Criar conexao
-        
+
         conexao = ConexaoDatabase.getConnection();
 //        Statement stmt = conexao.createStatement();
 
@@ -132,7 +135,7 @@ public class Entrar extends HttpServlet {
             String nome_curso = buscarNomeCurso(id_curso);
             // Buscando as disciplinas que o estudantes esta matriculado
             List<String> disciplinas_mat = buscarDisciplinasMatriculadas(id);
-            
+
 //            INSTANCIANDO O ESTUDANTE 
             Estudante e = new Estudante(id, nome, cpf, endereco, nome_curso, disciplinas_mat);
 //
@@ -158,13 +161,12 @@ public class Entrar extends HttpServlet {
         st.setInt(1, id_curso);
 
 // Executar query
-       ResultSet rs = st.executeQuery();
+        ResultSet rs = st.executeQuery();
 
         // Atribuir o retorno ao request
         while (rs.next()) {
             nome_curso = rs.getString("descricao");
         }
-
 
         //Retornar o resultado
         return nome_curso;
@@ -183,19 +185,44 @@ public class Entrar extends HttpServlet {
         //Criar o statement
         st = conexao.prepareStatement(query);
         st.setInt(1, id);
-        
+
         //Executar o statement
         ResultSet rs = st.executeQuery();
-        
-        //Recuperar os resultados
         List<String> disciplinas = new ArrayList<>();
+
+        //Recuperar os resultados
         while (rs.next()) {
             disciplinas.add(rs.getString("descricao"));
             System.out.println(rs.getString("descricao"));
         }
-                
+
         //retornar os resultados 
         return disciplinas;
+    }
+
+    private void carregarCatalogoDisciplinas(HttpSession session) throws SQLException {
+        //Criar conexao
+        conexao = ConexaoDatabase.getConnection();
+
+        //Criar query
+        query = "SELECT descricao FROM disciplinas";
+
+        //Criar o statement        List<String> disciplinas = new ArrayList<>();
+        st = conexao.prepareStatement(query);
+
+        //Executar o statement
+        ResultSet rs = st.executeQuery();
+
+        //Recuperar os resultados
+        List<String> catalogo_disciplinas = new ArrayList<>();
+
+        while (rs.next()) {
+            catalogo_disciplinas.add(rs.getString("descricao"));
+            System.out.println(rs.getString("descricao"));
+        }
+        
+        // Adicionar a session
+        session.setAttribute("CATALOGO_DISCIPLINAS", catalogo_disciplinas);
     }
 
 }
