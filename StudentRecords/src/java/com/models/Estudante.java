@@ -6,6 +6,7 @@
 package com.models;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -18,12 +19,12 @@ public class Estudante {
     private String cpf;
     private String endereco;
     private String curso;
-    private List<String> disciplinas_mat;
+    private Map<Integer, String> disciplinas_mat;
 
     public Estudante() {
     }
 
-    public Estudante(String nome, String cpf, String endereco, String curso, List<String> disciplinas_mat) {
+    public Estudante(String nome, String cpf, String endereco, String curso, Map<Integer, String> disciplinas_mat) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -33,7 +34,7 @@ public class Estudante {
 
     
     
-    public Estudante(int id, String nome, String cpf, String endereco, String curso, List<String> disciplinas_mat) {
+    public Estudante(int id, String nome, String cpf, String endereco, String curso, Map<Integer, String> disciplinas_mat) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -84,11 +85,11 @@ public class Estudante {
         this.curso = curso;
     }    
 
-    public List<String> getDisciplinas_mat() {
+    public Map<Integer, String> getDisciplinas_mat() {
         return disciplinas_mat;
     }
 
-    public void setDisciplinas_mat(List<String> disciplinas_mat) {
+    public void setDisciplinas_mat(Map<Integer, String> disciplinas_mat) {
         this.disciplinas_mat = disciplinas_mat;
     }
     

@@ -88,7 +88,7 @@
                                         <label>
                                             <input type="checkbox" value="${disc.key}"
                                                    <c:forEach items="${estudante.disciplinas_mat}" var="disc_matriculada">
-                                                       ${disc.value==disc_matriculada ? "checked" : ""}
+                                                       ${disc.value==disc_matriculada.value ? "checked" : ""}
                                                    </c:forEach>>
                                             ${disc.value}
                                         </label>

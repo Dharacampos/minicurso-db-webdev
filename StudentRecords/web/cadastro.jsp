@@ -12,6 +12,12 @@
 
 <h2>Cadastrar estudante</h2>
 
+<c:if test="${param.success=='true'}" >
+  
+    <div class="alert alert-success text-center" role="alert">Cadastro realizado com sucesso!</div>
+</c:if>
+   
+
 <form action="Cadastro" method="post" class="form-group" id="dados_estudantes">
     <!--CAMPOS DE EDICAO DO ESTUDANTE-->
     <div class="row">
@@ -33,12 +39,12 @@
     <div class="row">
         <div class="col-md-3 form-group">
             <label for="cpf">CPF</label>
-                        <input class="form-control" id="cpf" name="cpf">
+                        <input class="form-control" type="text" id="cpf" name="cpf">
         </div>
         
         <div class="col-md-9 form-group">
             <label for="endereco">Endereço</label>
-            <input class="form-control" type="text" id="endereco" nome="endereco">
+            <input class="form-control" type="text" id="endereco" name="endereco">
         </div>
     </div>
 

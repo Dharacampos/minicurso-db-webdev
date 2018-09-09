@@ -135,7 +135,7 @@ public class Entrar extends HttpServlet {
             //Buscando o nome do curso do estudante
             String nome_curso = buscarNomeCurso(id_curso);
             // Buscando as disciplinas que o estudantes esta matriculado
-            List<String> disciplinas_mat = buscarDisciplinasMatriculadas(id);
+            Map<Integer, String> disciplinas_mat = buscarDisciplinasMatriculadas(id);
 
 //            INSTANCIANDO O ESTUDANTE 
             Estudante e = new Estudante(id, nome, cpf, endereco, nome_curso, disciplinas_mat);
@@ -173,12 +173,12 @@ public class Entrar extends HttpServlet {
         return nome_curso;
     }
 
-    private List<String> buscarDisciplinasMatriculadas(int id) throws SQLException {
+    private Map<Integer, String> buscarDisciplinasMatriculadas(int id) throws SQLException {
         //Criar conexao
         conexao = ConexaoDatabase.getConnection();
 
         //Criar query
-        query = "SELECT d.descricao FROM disciplinas_estudantes de "
+        query = "SELECT d.id, d.descricao FROM disciplinas_estudantes de "
                 + "INNER JOIN estudantes e ON e.id = de.id_estudante "
                 + "INNER JOIN disciplinas d ON d.id = de.id_disciplina "
                 + "WHERE e.id = ?;";
@@ -189,11 +189,11 @@ public class Entrar extends HttpServlet {
 
         //Executar o statement
         ResultSet rs = st.executeQuery();
-        List<String> disciplinas = new ArrayList<>();
+        Map<Integer, String> disciplinas = new HashMap<>();
 
         //Recuperar os resultados
         while (rs.next()) {
-            disciplinas.add(rs.getString("descricao"));
+            disciplinas.put(rs.getInt("id"),rs.getString("descricao"));
             System.out.println(rs.getString("descricao"));
         }
 
