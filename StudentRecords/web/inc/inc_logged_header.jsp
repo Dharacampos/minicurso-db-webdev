@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,10 +23,9 @@
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">
+                <link href="css/signin.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <link href="css/carousel.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -40,6 +41,7 @@
                     <a class="navbar-brand" href="home.jsp">Student Manager</a>
                 </div>
 
+                <c:if test="${sessionScope.ESTUDANTES != null}">
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
@@ -48,9 +50,10 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="sair">Sair</a></li>
+                        <li><a href="Sair">Sair</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
+                </c:if>
             </div><!-- /.container-fluid -->
         </nav>
 

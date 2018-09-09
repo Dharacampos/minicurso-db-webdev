@@ -7,7 +7,11 @@ and open the template in the editor.
     Created on : 09/09/2018, 00:19:31
     Author     : paulo
 */
-
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 .navbar-default {
   background-color: #276198;
   border-color: #4984bb;
