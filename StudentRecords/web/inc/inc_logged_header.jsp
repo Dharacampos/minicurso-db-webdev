@@ -23,7 +23,7 @@
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-                <link href="css/signin.css" rel="stylesheet">
+        <link href="css/signin.css" rel="stylesheet">
 
         <link href="css/main.css" rel="stylesheet">
     </head>
@@ -42,17 +42,17 @@
                 </div>
 
                 <c:if test="${sessionScope.ESTUDANTES != null}">
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="${titulo=="Home" ? "active" : ""}"><a href="home.jsp">Listar</a></li>
-                        <li class="${titulo=="Cadastro" ? "active" : ""}"><a href="cadastro.jsp">Cadastrar</a></li>
-                    </ul>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="${titulo=="Home" ? "active" : ""}"><a href="home.jsp">Listar</a></li>
+                            <li class="${titulo=="Cadastro" ? "active" : ""}"><a href="cadastro.jsp">Cadastrar</a></li>
+                        </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Sair">Sair</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="Sair">Sair</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
                 </c:if>
             </div><!-- /.container-fluid -->
         </nav>
