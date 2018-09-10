@@ -1,7 +1,9 @@
 # Para estudantes
 https://commonmark.org/help/
 
+# Ementa
 
+(img/ementa.jpeg)
 # Instalação das ferramentas
 
 ### Instalando o JDK
