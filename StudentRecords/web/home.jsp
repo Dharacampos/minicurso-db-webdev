@@ -14,6 +14,10 @@
 <c:if test="${param.success=='true'}" >
     <div class="alert alert-success text-center" role="alert">Remoção realizada com sucesso!</div>
 </c:if>
+    <br>
+<c:if test="${param.update=='true'}" >
+    <div class="alert alert-success text-center" role="alert">Atualização realizada com sucesso!</div>
+</c:if>
 <br><br>
 <table class="table table-hover">
     <tr>

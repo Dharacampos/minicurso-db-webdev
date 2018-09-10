@@ -95,7 +95,7 @@ public class Atualizar extends HttpServlet {
             e_atual.setEndereco(endereco);
 
             // Redirecionar a pagina
-            response.sendRedirect("home.jsp?udpate=1");
+            response.sendRedirect("home.jsp?update=true");
         } catch (SQLException ex) {
             Logger.getLogger(Atualizar.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
