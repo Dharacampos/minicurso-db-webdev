@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/UFU/Minicurso/BancodeDadosHTML/StudentRecords/web/inc/inc_logged_header.jsp</file>
             <file>file:/D:/UFU/Minicurso/BancodeDadosHTML/StudentRecords/src/java/com/servlets/Cadastro.java</file>
-            <file>file:/D:/UFU/Minicurso/BancodeDadosHTML/StudentRecords/src/java/com/models/Estudante.java</file>
             <file>file:/D:/UFU/Minicurso/BancodeDadosHTML/StudentRecords/web/home.jsp</file>
-            <file>file:/D:/UFU/Minicurso/BancodeDadosHTML/StudentRecords/web/cadastro.jsp</file>
-            <file>file:/D:/UFU/Minicurso/BancodeDadosHTML/StudentRecords/src/java/com/servlets/Entrar.java</file>
+            <file>file:/D:/UFU/Minicurso/BancodeDadosHTML/StudentRecords/src/java/com/servlets/Atualizar.java</file>
+            <file>file:/D:/UFU/Minicurso/BancodeDadosHTML/StudentRecords/web/css/signin.css</file>
         </group>
     </open-files>
 </project-private>

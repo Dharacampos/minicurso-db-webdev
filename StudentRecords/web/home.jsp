@@ -53,32 +53,31 @@
                     <h4 class="modal-title" id="modal_editarLabel">Editar estudante</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="Atualizar" method="post" class="form-group" id="dados_estudantes">
+                    <form action="Atualizar" method="post" class="form-group" id="dados_estudantes${estudante.id}">
                         <!--CAMPOS DE EDICAO DO ESTUDANTE-->
                         <div class="row">
                             <div class="col-md-1 form-group">
                                 <label for="id">Id</label>
-                                <p id="id" name="id">${estudante.id}</p>
-
+                                <input class="form-control" type="text" id="id" name="id" value="${estudante.id}" readonly="">
                             </div>
                             <div class="col-md-5 form-group">
                                 <label for="nome">Nome</label>
-                                <p id="nome" name="nome">${estudante.nome}</p>
+                                <input class="form-control" type="text" id="nome" name="nome" value="${estudante.nome}" readonly="">
                             </div>
                             <div class="col-md-6 form-group">
                                 <label for="curso">Curso</label>
-                                <input class="form-control" type="text" id="curso" nome="curso" value="${estudante.curso}">
+                                <input class="form-control" type="text" id="curso" nome="curso" value="${estudante.curso}" readonly="">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-3 form-group">
                                 <label for="cpf">CPF</label>
-                                <p id="cpf" name="cpf">${estudante.cpf}</p>
+                                <input class="form-control" type="text" id="cpf" name="cpf" value="${estudante.cpf}" readonly="">
                             </div>
                             <div class="col-md-9 form-group">
                                 <label for="endereco">Endereço</label>
-                                <input class="form-control" type="text" id="endereco" nome="endereco" value="${estudante.endereco}">
+                                <input class="form-control" type="text" id="endereco" name="endereco" value="${estudante.endereco}">
                             </div>
                         </div>
 
@@ -88,7 +87,7 @@
                                 <div class="checkbox">
                                     <c:forEach items="${CATALOGO_DISCIPLINAS}" var="disc">
                                         <label>
-                                            <input type="checkbox" value="${disc.key}"
+                                            <input type="checkbox" name="disciplinas_mat" id="disciplinas_mat" value="${disc.key}"
                                                    <c:forEach items="${estudante.disciplinas_mat}" var="disc_matriculada">
                                                        ${disc.value==disc_matriculada.value ? "checked" : ""}
                                                    </c:forEach>>
@@ -103,7 +102,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" form="dados_estudantes" class="btn btn-primary">Salvar alterações</button>
+                    <button type="submit" form="dados_estudantes${estudante.id}" class="btn btn-primary">Salvar alterações</button>
                 </div>
             </div>
         </div>
