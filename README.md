@@ -1,5 +1,8 @@
 # Arquivos do minicurso Banco de Dados e WebDev
 
+##Ementa 
+
+(ementa.jpeg)
 ## Navegando pelo repositório
 
 A pasta `tutorial` contém os passos para instalação e __setup__ para iniciar o curso.
