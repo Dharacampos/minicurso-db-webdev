@@ -1,3 +1,6 @@
+-- CRIAR A DATABASE
+-- CREATE DATABASE minicursobd;
+
 -- CRIANDO TABELAS
 CREATE TABLE cursos(
   id SERIAL PRIMARY KEY,
@@ -48,6 +51,7 @@ CREATE TABLE disciplinas_estudantes(
 
 INSERT INTO estudantes(nome, cpf, id_curso, endereco) VALUES
 ("Paulo Camargos Silva","12345678912", 1, "Av. Segismundo Pereira, 150"),
+("Dhara Campos", "23456789123", 1, "Av. Afonso Pena, 250")
 ("João Souza","98765432198", 5, "Av. João Naves de Ávila, 1102");
 
 INSERT INTO login(usuario, senha, id_estudante) VALUES
