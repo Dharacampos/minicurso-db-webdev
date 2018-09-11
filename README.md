@@ -23,3 +23,7 @@ Durante o projeto, serão utilizadas diversas ferramentas para construção do b
 ##### Linguagem de programação e ferramentas
 
 O projeto utiliza a linguagem de programação **Java** para construção do `backend` em conjunto com as ferramentas **Servlets** e **JSP**. No `frontend`, projeto utiliza as ferramentas **HTML**, **CSS** (com framework **Bootstrap 3.7**), e a linguagem **JavaScript**. O banco de dados utilizado é o **My SQL e phpmyadmin**. O passo a passo de instalação do destas ferramentas se encontra no arquivo `projeto/README.md`
+
+## Cronograma do curso
+
+![Cronograma](tutorial/img/cronograma.png)

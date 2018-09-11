@@ -1,5 +1,3 @@
-# Para Dhara
-https://commonmark.org/help/
 
 # Instalação das ferramentas
 
@@ -27,13 +25,13 @@ está correto**, caso contrário, especifique-o. Clique em __Próximo (next)__ a
     ![Caminho de instalação do JDK](img/jdkpath.png)
 1. Ao fim, clique em __Finalizar (Finish)__
 
-## Instalando o WampServer
+### Instalando o WampServer
 1. Acesse a [página de donwloads do NetBeans](https://netbeans.org/downloads/)
 
+### Download JSTL .jar
 
-# Iniciando o primeiro projeto
-
-## Download JSTL .jar
+Fa�a o download das seguintes bibliotecas e coloque-as na pasta `lib` do seu 
+projeto.
 
 1. https://mvnrepository.com/artifact/org.glassfish.web/javax.servlet.jsp.jstl/1.2.1
 1. https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api/1.2.1
