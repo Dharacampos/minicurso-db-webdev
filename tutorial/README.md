@@ -1,4 +1,3 @@
-
 # Instalação das ferramentas
 
 ### Instalando o JDK
