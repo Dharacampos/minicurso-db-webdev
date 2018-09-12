@@ -24,12 +24,19 @@ estÃ¡ correto**, caso contrÃ¡rio, especifique-o. Clique em __PrÃ³ximo (next)__ a
     ![Caminho de instalaÃ§Ã£o do JDK](img/jdkpath.png)
 1. Ao fim, clique em __Finalizar (Finish)__
 
-### Instalando o WampServer
-1. Acesse a [pÃ¡gina de donwloads do NetBeans](https://netbeans.org/downloads/)
+### Instalando o XAMPP
+1. Acesse a [pÃ¡gina de donwloads do WampServer](https://www.apachefriends.org/pt_br/download.html)
+1. Faça o download da versão: **Windows/Mac/Linux, 64bit(x64) ou 32bits(x86)**
+1. Faça a instalação padrão.
+1. Ao final, abra o programa e ative o Apache e o MySQL.
+1. No programa ainda, clique no botão "Admin" e certifique-se de que a página
+`localhost/phpmyadmin` esteja funcionando.
+
+        Obs.: Sempre quando for usar o banco de dados, execute o último procedimento (5) para ativar o banco de dados.
 
 ### Download JSTL .jar
 
-Faça o download das seguintes bibliotecas e coloque-as na pasta `lib` do seu 
+Faça o download das seguintes bibliotecas e coloque-as na pasta `lib` do seu
 projeto.
 
 1. https://mvnrepository.com/artifact/org.glassfish.web/javax.servlet.jsp.jstl/1.2.1
