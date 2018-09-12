@@ -29,4 +29,4 @@ O projeto utiliza a linguagem de programação **Java** para construção do `ba
 
 ## Cronograma do curso
 
-![Cronograma](tutorial/img/cronograma.png)
+<!-- ![Cronograma](tutorial/img/cronograma.png) -->
