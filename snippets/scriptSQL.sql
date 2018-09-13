@@ -5,7 +5,7 @@
 CREATE TABLE cursos(
   id SERIAL PRIMARY KEY,
   descricao VARCHAR(64)
-);
+)  ENGINE=MyISAM DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 CREATE TABLE estudantes(
   id    SERIAL PRIMARY KEY,
