@@ -15,7 +15,7 @@ CREATE TABLE estudantes(
   id_curso INT,
 
   FOREIGN KEY (id_curso) REFERENCES cursos(id)
-);
+)  ENGINE=MyISAM DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci ;
 
 CREATE TABLE login(
   id SERIAL PRIMARY KEY,
@@ -25,7 +25,7 @@ CREATE TABLE login(
   id_estudante INT,
 
   FOREIGN KEY (id_estudante) REFERENCES estudantes(id)
-);
+)  ENGINE=MyISAM DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 CREATE TABLE disciplinas(
   id SERIAL PRIMARY KEY,
@@ -37,7 +37,7 @@ CREATE TABLE disciplinas(
   id_curso INT,
 
   FOREIGN KEY (id_curso) REFERENCES cursos(id)
-);
+)  ENGINE=MyISAM DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 -- RELAÇÃO MUITOS PARA MUITOS
 CREATE TABLE disciplinas_estudantes(
@@ -47,11 +47,11 @@ CREATE TABLE disciplinas_estudantes(
 
   FOREIGN KEY (id_estudante) REFERENCES estudantes(id),
   FOREIGN KEY (id_disciplina) REFERENCES disciplinas(id)
-);
+)  ENGINE=MyISAM DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
 
 INSERT INTO estudantes(nome, cpf, id_curso, endereco) VALUES
 ("Paulo Camargos Silva","12345678912", 1, "Av. Segismundo Pereira, 150"),
-("Dhara Campos", "23456789123", 1, "Av. Afonso Pena, 250")
+("Dhara Campos", "23456789123", 1, "Av. Afonso Pena, 250"),
 ("João Souza","98765432198", 5, "Av. João Naves de Ávila, 1102");
 
 INSERT INTO login(usuario, senha, id_estudante) VALUES
